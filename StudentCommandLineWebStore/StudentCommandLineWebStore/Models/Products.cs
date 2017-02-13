@@ -60,6 +60,5 @@ namespace StudentCommandLineWebStore.Models
                 Price = 12.5M
             }
         };
-
     }
 }

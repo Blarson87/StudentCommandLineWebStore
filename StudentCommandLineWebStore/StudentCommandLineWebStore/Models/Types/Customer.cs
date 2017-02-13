@@ -15,6 +15,6 @@ namespace StudentCommandLineWebStore.Models.Types
         public HashSet<Address> ShippingAddresses { get; set; }
         public HashSet<Order> OrderHistory { get; set; }
 
-        public Customer() {}
+        public Customer() { }
     }
 }

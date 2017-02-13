@@ -57,7 +57,5 @@ namespace StudentCommandLineWebStore.Models
               Country = "United States"
           }
         };
-
-
     }
 }
