@@ -48,14 +48,5 @@ namespace StudentCommandLineWebStore.Models
                 OrderHistory = new HashSet<Order>() {Orders.All[3], Orders.All[4]}
             }
         };
-
-        public Customers() { }
-
-        public string LogInCheck(string guestEmail)
-        {
-
-            return guestEmail;
-        }
-
     }
 }

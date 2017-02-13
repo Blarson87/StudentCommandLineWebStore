@@ -13,7 +13,7 @@ namespace StudentCommandLineWebStore
         public static void Main()
         {
             string logInEmail = null;
-            Customers guest = new Customers();
+            Customer guest = new Customer();
 
             Console.WriteLine("Welcome, please type your email address to log in.");
             logInEmail = Console.ReadLine();
