@@ -32,7 +32,7 @@ namespace StudentCommandLineWebStore.Models
             new Order()
             {
                 ID = 4,
-                OrderDate = null,
+                OrderDate = new DateTime(2012, 11, 10),
                 ShipDate = new DateTime(2012, 11, 11)
             }
         };

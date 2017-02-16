@@ -18,7 +18,7 @@ namespace StudentCommandLineWebStore.Models.Types
             }
             set
             {
-                if (!OrderDate.HasValue || !value.HasValue)
+                if ((!OrderDate.HasValue && value.HasValue))
                 {
                     throw new NullReferenceException("Order date and ship date required!");
                 }
