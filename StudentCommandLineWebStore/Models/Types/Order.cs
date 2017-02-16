@@ -48,7 +48,7 @@ namespace StudentCommandLineWebStore.Models.Types
         }
 
         private DateTime? _shipDate;
-        private Dictionary<Product, int> _products;
+        private Dictionary<Product, int> _products = new Dictionary<Product, int>();
 
         public Order() { }
 
