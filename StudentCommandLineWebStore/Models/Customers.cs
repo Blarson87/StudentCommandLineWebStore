@@ -45,7 +45,7 @@ namespace StudentCommandLineWebStore.Models
                 EmailAddress = "stardust@yahoo.com",
                 BillingAddress = Addresses.All[2],
                 ShippingAddresses = new HashSet<Address>() {Addresses.All[4]},
-                OrderHistory = new HashSet<Order>() {Orders.All[3], Orders.All[4]}
+                OrderHistory = new HashSet<Order>() {Orders.All[0], Orders.All[3]}
             }
         };
     }

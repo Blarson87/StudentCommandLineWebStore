@@ -18,7 +18,7 @@ namespace StudentCommandLineWebStore.Models.Types
             }
             set
             {
-                if (!OrderDate.HasValue || !value.HasValue)
+                if ((!OrderDate.HasValue && value.HasValue))
                 {
                     throw new NullReferenceException("Order date and ship date required!");
                 }
@@ -48,7 +48,7 @@ namespace StudentCommandLineWebStore.Models.Types
         }
 
         private DateTime? _shipDate;
-        private Dictionary<Product, int> _products;
+        private Dictionary<Product, int> _products = new Dictionary<Product, int>();
 
         public Order() { }
 
