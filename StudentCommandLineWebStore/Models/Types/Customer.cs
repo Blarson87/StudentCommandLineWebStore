@@ -17,19 +17,6 @@ namespace StudentCommandLineWebStore.Models.Types
 
         public Customer() { }
 
-        public string LogInCheck(string email)
-        {
-
-            if (Customers.All.Any(c => c.EmailAddress == email))
-            {
-                Console.Write("Welcome!");
-            }
-            else
-            {
-                Console.WriteLine("try again");
-            }
-
-            return email;
-        }
+        
     }
 }
