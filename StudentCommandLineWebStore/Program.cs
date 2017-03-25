@@ -48,7 +48,7 @@ namespace StudentCommandLineWebStore
                         PlaceOrder();
                         break;
                     case "2":
-                        CheckHistory();
+                        CheckHistory(currentCustomer);
                         break;
                     case "3":
                         AddShipping();
@@ -57,7 +57,7 @@ namespace StudentCommandLineWebStore
                         RemoveShipping();
                         break;
                     case "5":
-                        ChangeBilling();
+                        ChangeBilling(currentCustomer);
                         break;
                     default:
                         break;                    
@@ -94,6 +94,10 @@ namespace StudentCommandLineWebStore
             correctType = false;
 
             Product itemSelected = ProductService.GetProduct(selection);
+
+            Order newOrder = new Order { };
+            newOrder.AddProduct(itemSelected);
+
             Console.WriteLine("*" + itemSelected.Name + "*");
             Console.WriteLine("*" + itemSelected.Description + "*");
             Console.WriteLine("Amount is stock *" + itemSelected.Quantity + "*");
@@ -117,9 +121,12 @@ namespace StudentCommandLineWebStore
             }
         }
 
-        public static void CheckHistory()
+        public static void CheckHistory(Customer current)
         {
-
+            for(int i = 0; i < current.OrderHistory.Count; i++)
+            {
+                Console.WriteLine(string.Format("{0}", current.OrderHistory));
+            }
         }
 
         public static void AddShipping()
@@ -132,8 +139,41 @@ namespace StudentCommandLineWebStore
 
         }
 
-        public static void ChangeBilling()
+        public static void ChangeBilling(Customer current)
         {
+            string streetName = "";
+            string city = "";
+            string state = "";
+            string zip = "";
+            string country = "";
+
+            Console.WriteLine("What would like to change the Billing address to?");
+            Console.WriteLine(string.Format("Current address: {0} {1} {2} {3} {4}", current.BillingAddress.StreetName, current.BillingAddress.City,
+            current.BillingAddress.State, current.BillingAddress.ZipCode, current.BillingAddress.Country));
+
+            Console.WriteLine("Street:");
+            streetName = Console.ReadLine();
+
+            Console.WriteLine("City:");
+            city = Console.ReadLine();
+
+            Console.WriteLine("State:");
+            state = Console.ReadLine();
+
+            Console.WriteLine("Zip Code:");
+            zip = Console.ReadLine();
+
+            Console.WriteLine("Country:");
+            country = Console.ReadLine();
+
+            current.BillingAddress.StreetName = streetName;
+            current.BillingAddress.City = city;
+            current.BillingAddress.State = state;
+            current.BillingAddress.ZipCode = zip;
+            current.BillingAddress.Country = country;
+
+            Console.WriteLine(string.Format("Updated to: {0} {0} {1} {2} {3} {4}", current.BillingAddress.StreetName, current.BillingAddress.City,
+            current.BillingAddress.State, current.BillingAddress.ZipCode, current.BillingAddress.Country));
 
         }
     }
